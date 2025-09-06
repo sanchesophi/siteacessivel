@@ -16,28 +16,42 @@ document.addEventListener('DOMContentLoaded', function(){
      
      const alternaContraste = document.getElementById('alterna-contraste')
  
-     let tamanhoAtualFonte = 1;
+     let tamanhoAtualFontebody = 1;
+     let tamanhoAtualFontenavlink = 2;
+     // Get all elements with the class 'navlink'
+    const navLinks = document.querySelectorAll('.nav-link');
  
      aumentaFonteBotao.addEventListener('click', function(){
-         tamanhoAtualFonte += 0.1;
-         document.body.style.fontSize = `${tamanhoAtualFonte}rem`
- 
+         tamanhoAtualFontebody += 0.1;
+         tamanhoAtualFontenavlink += 0.1;
+
+         document.body.style.fontSize = `${tamanhoAtualFontebody}rem`
+         
+         // Iterate through each navlink and change its font size
+         navLinks.forEach(link => {
+             link.style.fontSize = `${tamanhoAtualFontenavlink}rem`;
+         });
      })
  
      diminuiFonteBotao.addEventListener('click', function(){
-         tamanhoAtualFonte -= 0.1;
-         document.body.style.fontSize = `${tamanhoAtualFonte}rem`
+         tamanhoAtualFontebody -= 0.1;
+         tamanhoAtualFontenavlink -= 0.1;
+         
+         document.body.style.fontSize = `${tamanhoAtualFontebody}rem`
  
+         // Iterate through each navlink and change its font size
+         navLinks.forEach(link => {
+             link.style.fontSize = `${tamanhoAtualFontenavlink}rem`;
+         });
      })
  
      alternaContraste.addEventListener('click', function(){
          document.body.classList.toggle('alto-contraste')
      })
- 
- 
+  
  })
- 
- ScrollReveal().reveal('#inicio', { delay: 500 });
- ScrollReveal().reveal('#tropicalia', { delay: 500 });
- ScrollReveal().reveal('#galeria', { delay: 500 });
- ScrollReveal().reveal('#contato', { delay: 500 });
+
+ ScrollReveal().reveal('#inicio', { delay: 600 });
+ ScrollReveal().reveal('#empresasocial', { delay: 600 });
+ ScrollReveal().reveal('#galeria', { delay: 600 });
+ ScrollReveal().reveal('#contato', { delay: 600 });
